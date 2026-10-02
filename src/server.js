@@ -153,7 +153,16 @@ app.use(
     })
 );
 
-// Pasta de imagens fora de src/ — servida em /imagens/*.
+// Pasta de imagens — suporta as duas localizações para o deploy
+// não quebrar: src/imagens/* (autocontida) e ../imagens/* (atual).
+app.use(
+    "/imagens",
+    express.static(path.join(__dirname, "imagens"), {
+        dotfiles: "deny",
+        maxAge: "1h",
+        redirect: false
+    })
+);
 app.use(
     "/imagens",
     express.static(path.join(__dirname, "..", "imagens"), {
