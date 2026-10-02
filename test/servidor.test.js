@@ -4,7 +4,7 @@ const request = require("supertest");
 const fs = require("node:fs");
 const path = require("node:path");
 
-const app = require("../server.js");
+const app = require("../src/server.js");
 
 const contactoValido = {
     nome: "Ana Silva",

@@ -140,14 +140,24 @@ app.use((req, res, next) => {
 
 
 // =====================================================
-// FICHEIROS DO WEBSITE
-// dotfiles negados, sem listagem de diretórios.
+// FICHEIROS DO WEBSITE (estrutura com src/)
+// HTML/CSS/JS em src/, imagens em ../imagens/.
 // =====================================================
 
 app.use(
     express.static(path.join(__dirname), {
         dotfiles: "deny",
         index: "index.html",
+        maxAge: "1h",
+        redirect: false
+    })
+);
+
+// Pasta de imagens fora de src/ — servida em /imagens/*.
+app.use(
+    "/imagens",
+    express.static(path.join(__dirname, "..", "imagens"), {
+        dotfiles: "deny",
         maxAge: "1h",
         redirect: false
     })

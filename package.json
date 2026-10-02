@@ -2,10 +2,10 @@
   "name": "universidade-jupiter",
   "version": "1.0.0",
   "description": "Website da Universidade Jupiter",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js",
+    "start": "node src/server.js",
+    "dev": "node src/server.js",
     "test": "node --test test/*.test.js"
   },
   "dependencies": {
