@@ -1,0 +1,17 @@
+{
+  "name": "universidade-jupiter",
+  "version": "1.0.0",
+  "description": "Website da Universidade Jupiter",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.0.0",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.0.0",
+    "helmet": "^8.0.0",
+    "nodemailer": "^7.0.0"
+  }
+}

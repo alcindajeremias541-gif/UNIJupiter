@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Candidate-se à Universidade Jupiter e inicie o seu percurso académico.">
+
+    <meta name="theme-color" content="#151a22">
+
+    <title>Candidatura | Universidade Jupiter</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="application-page">
+
+    <!-- =====================================================
+         CABEÇALHO
+    ====================================================== -->
+
+    <header class="header">
+
+        <div class="container nav">
+
+            <a href="index.html" class="logo" aria-label="Universidade Jupiter — Início">
+                <span class="logo-symbol">♃</span>
+                <span>JUPITER</span>
+            </a>
+
+            <nav aria-label="Navegação principal">
+
+                <a href="sobre-nos.html">
+                    Sobre nós
+                </a>
+
+                <a href="cursos.html">
+                    Cursos
+                </a>
+
+                <a href="campus.html">
+                    Campus
+                </a>
+
+                <a href="contacto.html">
+                    Contacto
+                </a>
+
+            </nav>
+
+            <a href="candidatura.html"
+               class="nav-button"
+               aria-current="page">
+                Candidatar-se
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="hero hero-candidatura">
+
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content">
+
+                <p class="eyebrow">
+                    UNIVERSIDADE JUPITER
+                </p>
+
+                <h1>
+                    Comece o seu
+                    <span>futuro aqui.</span>
+                </h1>
+
+                <p class="hero-text">
+                    Preencha o formulário para iniciar o seu
+                    processo de candidatura.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FORMULÁRIO
+        ================================================== -->
+
+        <section class="intro">
+
+            <div class="container">
+
+                <p class="eyebrow dark">
+                    CANDIDATURA
+                </p>
+
+                <h2>
+                    Faça parte da
+                    <span>Universidade Jupiter.</span>
+                </h2>
+
+
+                <form class="application-form" id="application-form" action="/api/candidatura" method="post">
+
+                    <div class="form-group">
+
+                        <label for="nome">
+                            Nome completo
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            placeholder="Digite o seu nome completo"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            E-mail
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="exemplo@email.com"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="telefone">
+                            Telefone
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="telefone"
+                            name="telefone"
+                            placeholder="Digite o seu número de telefone"
+                            autocomplete="tel"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="curso">
+                            Curso pretendido
+                        </label>
+
+                        <select
+                            id="curso"
+                            name="curso"
+                            required
+                        >
+
+                            <option value="" selected disabled>
+                                Selecione um curso
+                            </option>
+
+                            <option value="engenharia-florestal">
+                                Engenharia Florestal
+                            </option>
+
+                            <option value="medicina-geral">
+                                Medicina Geral
+                            </option>
+
+                            <option value="geologia-e-minas">
+                                Geologia e Minas
+                            </option>
+
+                            <option value="antropologia">
+                                Antropologia
+                            </option>
+
+                            <option value="engenharia-eletrica">
+                                Engenharia Elétrica
+                            </option>
+
+                            <option value="ciencia-da-computacao">
+                                Ciência da Computação
+                            </option>
+
+                            <option value="engenharia-mecanica">
+                                Engenharia Mecânica
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="mensagem">
+                            Mensagem
+                        </label>
+
+                        <textarea
+                            id="mensagem"
+                            name="mensagem"
+                            rows="6"
+                            placeholder="Escreva uma breve mensagem..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="button button-primary"
+                    >
+                        Enviar candidatura
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         RODAPÉ
+    ====================================================== -->
+
+    <footer>
+
+        <div class="container footer-content">
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="logo">
+                    <span class="logo-symbol">♃</span>
+                    <span>JUPITER</span>
+                </a>
+
+                <p>
+                    Universidade Jupiter — excelência,
+                    conhecimento e futuro.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <div>
+
+                    <h4>Universidade</h4>
+
+                    <a href="index.html">
+                        Início
+                    </a>
+
+                    <a href="sobre-nos.html">
+                        Sobre nós
+                    </a>
+
+                    <a href="cursos.html">
+                        Cursos
+                    </a>
+
+                    <a href="campus.html">
+                        Campus
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <h4>Contacto</h4>
+
+                    <a href="contacto.html">
+                        E-mail
+                    </a>
+
+                    <a href="contacto.html">
+                        Telefone
+                    </a>
+
+                    <a href="contacto.html">
+                        Localização
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="container copyright">
+
+            © 2026 Universidade Jupiter.
+            Todos os direitos reservados.
+
+        </div>
+
+    </footer>
+
+<script src="script.js"></script>
+</body>
+</html>

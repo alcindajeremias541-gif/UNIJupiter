@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#17232d"/><stop offset="1" stop-color="#496b7c"/></linearGradient></defs>
+<rect width="1200" height="700" fill="url(#bg)"/><rect x="60" y="70" width="1080" height="540" rx="24" fill="#eef3f4" opacity=".96"/>
+<rect x="100" y="120" width="1000" height="65" fill="#b7d4df"/><rect x="130" y="215" width="940" height="270" rx="12" fill="#dfe9eb"/>
+<rect x="170" y="260" width="260" height="150" rx="12" fill="#9db7c0"/><rect x="470" y="260" width="260" height="150" rx="12" fill="#9db7c0"/><rect x="770" y="260" width="260" height="150" rx="12" fill="#9db7c0"/>
+<g stroke="#fff" stroke-width="12" fill="none"><circle cx="300" cy="335" r="45"/><path d="M250 365h100M550 310v55M515 345h70M850 310v55M815 345h70"/></g>
+<rect x="220" y="500" width="760" height="35" rx="17" fill="#334852"/><rect x="270" y="535" width="20" height="45" fill="#334852"/><rect x="910" y="535" width="20" height="45" fill="#334852"/>
+<text x="600" y="650" text-anchor="middle" font-family="Arial" font-size="42" font-weight="700" fill="#29434f">LABORATÓRIOS JUPITER</text>
+</svg>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Entre em contacto com a Universidade Jupiter.">
+<title>Contacto | Universidade Jupiter</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a href="index.html" class="logo"><span class="logo-symbol">♃</span><span>JUPITER</span></a>
+    <button class="menu-toggle" id="mobile-menu-button" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
+    <nav id="main-nav" aria-label="Navegação principal">
+      <a href="index.html">Início</a><a href="sobre-nos.html">Sobre nós</a><a href="cursos.html">Cursos</a><a href="servicos.html">Serviços</a><a href="faq.html">FAQ</a><a href="contacto.html" aria-current="page">Contacto</a>
+    </nav>
+    <a href="candidatura.html" class="nav-button">Candidatar-se</a>
+  </div>
+</header>
+<main>
+<section class="hero hero-contacto"><div class="hero-overlay"></div><div class="container hero-content"><p class="eyebrow">UNIVERSIDADE JUPITER</p><h1>Entre em <span>contacto connosco.</span></h1><p class="hero-text">Estamos disponíveis para esclarecer dúvidas sobre cursos, candidatura e vida académica.</p></div></section>
+<section class="intro"><div class="container">
+<p class="eyebrow dark">CONTACTO</p><h2>Fale com a <span>Universidade Jupiter.</span></h2>
+<div class="application-form">
+<form id="contact-form" action="/api/contacto" method="post">
+<div class="form-group"><label for="contact-nome">Nome</label><input id="contact-nome" name="nome" type="text" required></div>
+<div class="form-group"><label for="contact-email">E-mail</label><input id="contact-email" name="email" type="email" required></div>
+<div class="form-group"><label for="contact-telefone">Telefone</label><input id="contact-telefone" name="telefone" type="tel"></div>
+<div class="form-group"><label for="contact-assunto">Assunto</label><input id="contact-assunto" name="assunto" type="text" required></div>
+<div class="form-group"><label for="contact-mensagem">Mensagem</label><textarea id="contact-mensagem" name="mensagem" rows="6" required></textarea></div>
+<button type="submit" class="button button-primary">Enviar mensagem</button>
+<p id="contact-status" class="form-status" role="status" aria-live="polite"></p>
+</form>
+</div>
+</div></section>
+</main>
+<footer><div class="container footer-content"><div class="footer-brand"><a href="index.html" class="logo"><span class="logo-symbol">♃</span><span>JUPITER</span></a><p>Universidade Jupiter — excelência, conhecimento e futuro.</p></div></div><div class="container copyright">© <span data-current-year></span> Universidade Jupiter. Todos os direitos reservados.</div></footer>
+<script src="script.js"></script>
+</body>
+</html>

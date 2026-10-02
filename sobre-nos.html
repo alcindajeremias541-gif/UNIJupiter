@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <title>Sobre nós | Universidade Jupiter</title>
+    <link rel="stylesheet" href="style.css">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #EEE3D0;
+    color: #151A22;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+
+.sobre-container {
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 40px 25px;
+}
+
+
+.sobre-titulo {
+    position: relative;
+    min-height: 430px;
+    overflow: hidden;
+    background-color: #182533;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+    margin-bottom: 60px;
+}
+
+.sobre-titulo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.45;
+}
+
+.sobre-titulo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        #182533 10%,
+        #182533 40%,
+        transparent 100%
+    );
+    z-index: 1;
+}
+
+.sobre-titulo h1,
+.sobre-titulo p {
+    position: relative;
+    z-index: 2;
+}
+
+.sobre-titulo h1 {
+    color: #FFFAF2;
+    font-size: 52px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    max-width: 600px;
+}
+
+.sobre-titulo p {
+    color: #D68997;
+    font-size: 21px;
+    max-width: 500px;
+}
+
+.sobre-introducao {
+    max-width: 900px;
+    margin: 0 auto 80px;
+    padding-left: 25px;
+    border-left: 5px solid #B77A50;
+}
+
+.sobre-introducao h2 {
+    color: #182533;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.sobre-introducao p {
+    color: #151A22;
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.historia {
+    margin-bottom: 90px;
+}
+
+.titulo-secao {
+    text-align: center;
+    color: #182533;
+    font-size: 34px;
+    margin-bottom: 65px;
+    position: relative;
+}
+
+.titulo-secao::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background-color: #B77A50;
+    margin: 15px auto 0;
+}
+
+.linha-tempo {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 45px;
+    padding-top: 20px;
+}
+
+.linha-tempo::before {
+    content: "";
+    position: absolute;
+    top: 42px;
+    left: 8%;
+    right: 8%;
+    height: 3px;
+    background-color: #B77A50;
+}
+
+.cartao-historia {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.cartao-historia::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #D68997;
+    border: 5px solid #EEE3D0;
+    border-radius: 50%;
+    margin: 0 auto 22px;
+    box-shadow: 0 0 0 2px #B77A50;
+}
+
+.cartao-historia h3 {
+    color: #6E4F38;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.cartao-historia strong {
+    color: #182533;
+    font-size: 18px;
+}
+
+.cartao-historia .texto {
+    color: #151A22;
+    font-size: 15px;
+    margin-top: 12px;
+}
+
+.sobre-missao-visao {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 90px;
+}
+
+.missao,
+.visao {
+    padding: 35px 30px;
+    border-top: 4px solid #B77A50;
+    border-bottom: 1px solid #B77A50;
+}
+
+.missao h2,
+.visao h2 {
+    color: #182533;
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+.missao h2::after,
+.visao h2::after {
+    content: "";
+    display: block;
+    width: 45px;
+    height: 3px;
+    background-color: #D68997;
+    margin-top: 10px;
+}
+
+.missao p,
+.visao p {
+    color: #151A22;
+    font-size: 16px;
+}
+
+.sobre-valores {
+    margin-bottom: 90px;
+}
+
+.sobre-valores > h2,
+.sobre-pilares > h2,
+.sobre-cursos > h2,
+.sobre-numeros > h2,
+.sobre-diferencial > h2 {
+    text-align: center;
+    color: #182533;
+    font-size: 34px;
+    margin-bottom: 50px;
+}
+
+.valores-lista {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px 45px;
+}
+
+.valor {
+    padding: 10px 20px;
+    border-left: 4px solid #D68997;
+}
+
+.valor h3 {
+    color: #6E4F38;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.valor p {
+    color: #151A22;
+    font-size: 15px;
+}
+
+.sobre-pilares {
+    margin-bottom: 90px;
+}
+
+.sobre-pilares > h2 {
+    margin-bottom: 45px;
+}
+
+.pilar {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 40px;
+    padding: 10px 25px;
+    border-left: 5px solid #B77A50;
+}
+
+.pilar:nth-child(even) {
+    margin-left: 3%;
+}
+
+.pilar h3 {
+    color: #182533;
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.pilar p {
+    color: #151A22;
+    font-size: 15px;
+}
+
+.sobre-cursos {
+    background-color: #182533;
+    padding: 55px 60px;
+    margin-bottom: 90px;
+}
+
+.sobre-cursos > h2 {
+    color: #FFFAF2;
+    text-align: left;
+    margin-bottom: 35px;
+}
+
+.sobre-cursos ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+}
+
+.sobre-cursos li {
+    color: #FFFAF2;
+    padding: 16px 10px;
+    border-bottom: 1px solid #6E4F38;
+    font-size: 16px;
+}
+
+.sobre-cursos li::before {
+    content: "•";
+    color: #D68997;
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+.sobre-numeros {
+    background-color: #543820;
+    margin: 0 -25px 90px;
+    padding: 60px 25px;
+    text-align: center;
+}
+
+.sobre-numeros > h2 {
+    color: #FFFAF2;
+    margin-bottom: 45px;
+}
+
+.numero {
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.numero h3 {
+    color: #D68997;
+    font-size: 45px;
+    margin-bottom: 5px;
+}
+
+.numero p {
+    color: #FFFAF2;
+    font-size: 16px;
+}
+
+.sobre-diferencial {
+    max-width: 850px;
+    margin: 0 auto 50px;
+    text-align: center;
+    padding: 45px 30px;
+    border-top: 4px solid #B77A50;
+    border-bottom: 4px solid #B77A50;
+}
+
+.sobre-diferencial > h2 {
+    margin-bottom: 25px;
+}
+
+.sobre-diferencial p {
+    color: #151A22;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+@media (max-width: 800px) {
+
+    .sobre-titulo {
+        min-height: 360px;
+        padding: 35px;
+    }
+
+    .sobre-titulo h1 {
+        font-size: 40px;
+    }
+
+    .sobre-titulo p {
+        font-size: 18px;
+    }
+
+    .linha-tempo {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding-left: 35px;
+    }
+
+    .linha-tempo::before {
+        top: 20px;
+        bottom: 20px;
+        left: 44px;
+        width: 3px;
+        height: auto;
+        right: auto;
+    }
+
+    .cartao-historia {
+        text-align: left;
+        padding-left: 35px;
+    }
+
+    .cartao-historia::before {
+        position: absolute;
+        left: -1px;
+        top: 0;
+        margin: 0;
+    }
+
+    .sobre-missao-visao {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .valores-lista {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .sobre-cursos ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    .sobre-container {
+        padding: 25px 15px;
+    }
+
+    .sobre-titulo {
+        min-height: 320px;
+        padding: 25px;
+    }
+
+    .sobre-titulo h1 {
+        font-size: 34px;
+    }
+
+    .sobre-titulo p {
+        font-size: 16px;
+    }
+
+    .sobre-introducao {
+        padding-left: 18px;
+    }
+
+    .valores-lista {
+        grid-template-columns: 1fr;
+    }
+
+    .pilar {
+        width: 100%;
+        margin-left: 0 !important;
+    }
+
+    .numero {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .sobre-cursos {
+        padding: 40px 25px;
+    }
+
+    .sobre-numeros {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+}
+
+   
+   
+ </style>
+</head>
+<body>
+<header class="header" style="position:relative;background:#182533;">
+  <div class="container nav">
+    <a href="index.html" class="logo"><span class="logo-symbol">♃</span><span>JUPITER</span></a>
+    <button class="menu-toggle" id="mobile-menu-button" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
+    <nav id="main-nav" aria-label="Navegação principal"><a href="index.html">Início</a><a href="sobre-nos.html" aria-current="page">Sobre nós</a><a href="cursos.html">Cursos</a><a href="servicos.html">Serviços</a><a href="faq.html">FAQ</a><a href="contacto.html">Contacto</a></nav>
+    <a href="candidatura.html" class="nav-button">Candidatar-se</a>
+  </div>
+</header>
+
+    <div class="sobre-container">
+
+        <div class="sobre-titulo">
+            <h1>Sobre nos</h1>
+          <img src="imagens/campus-estudantes.jpg" alt="imagem da universidadeju" width="100%">
+            <p>Conheça a Universidade Júpiter</p>
+        </div>
+
+        <div class="sobre-introducao">
+            <h2>Quem Somos</h2>
+
+            <p>
+                A Universidade Júpiter é uma instituição de ensino superior
+                dedicada à formação de profissionais competentes, éticos e
+                preparados para enfrentar os desafios do mundo atual.
+            </p>
+
+            <p>
+                Fundada em 2015, a universidade tem como propósito oferecer
+                um ambiente académico que valoriza o conhecimento, a inovação,
+                a responsabilidade e o desenvolvimento pessoal dos estudantes.
+            </p>
+        </div>
+
+
+        <div class="historia"> 
+        <h2 class="titulo-secao">História da Universidade</h2> 
+       <div class="linha-tempo"> 
+
+       <div class="cartao-historia">
+      <h3>2015</h3>
+ <p><strong>Fundação</strong></p> 
+
+     <p class="texto"> Fundação da Universidade Júpiter e início das suas atividades académicas. </p>
+     </div> 
+     <div class="cartao-historia"> 
+      <h3>2018</h3>
+       <p><strong>Expansão</strong></p> 
+     <p class="texto"> Expansão da instituição e aumento da oferta de formação académica. </p> 
+</div>
+
+    <div class="cartao-historia">
+     <h3>2022</h3> 
+   <p><strong>Fortalecimento</strong></p> 
+    <p class="texto"> Fortalecimento da qualidade do ensino e das atividades académicas. </p> 
+   </div>
+   </div>
+   </div>
+
+
+        <div class="sobre-missao-visao">
+
+            <div class="missao">
+                <h2>Missão</h2>
+
+                <p>
+                    Formar profissionais competentes, éticos e inovadores,
+                    capazes de contribuir para o desenvolvimento da sociedade.
+                </p>
+            </div>
+
+            <div class="visao">
+                <h2>Visão</h2>
+
+                <p>
+                    Ser uma instituição de referência em Moçambique e na região,
+                    reconhecida pela qualidade do ensino, inovação e compromisso
+                    com a sociedade.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="sobre-valores">
+            <h2>Os Nossos Valores</h2>
+
+            <div class="valores-lista">
+
+                <div class="valor">
+                    <h3>Excelência</h3>
+                    <p>Procuramos oferecer qualidade em tudo o que fazemos.</p>
+                </div>
+
+                <div class="valor">
+                    <h3>Integridade</h3>
+                    <p>Valorizamos a honestidade e a responsabilidade.</p>
+                </div>
+
+                <div class="valor">
+                    <h3>Respeito</h3>
+                    <p>Promovemos um ambiente baseado no respeito mútuo.</p>
+                </div>
+
+                <div class="valor">
+                    <h3>Inovação</h3>
+                    <p>Incentivamos novas ideias e o uso da tecnologia.</p>
+                </div>
+
+                <div class="valor">
+                    <h3>Colaboração</h3>
+                    <p>Valorizamos o trabalho em equipa e a cooperação.</p>
+                </div>
+
+                <div class="valor">
+                    <h3>Responsabilidade</h3>
+                    <p>Assumimos o compromisso com a comunidade e a sociedade.</p>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="sobre-pilares">
+            <h2>Os Nossos Pilares</h2>
+
+            <div class="pilar">
+                <h3>Ensino de Excelência</h3>
+                <p>
+                    Promovemos uma formação académica de qualidade.
+                </p>
+            </div>
+
+            <div class="pilar">
+                <h3>Investigação</h3>
+                <p>
+                    Incentivamos a pesquisa e a produção de conhecimento.
+                </p>
+            </div>
+
+            <div class="pilar">
+                <h3>Inovação e Tecnologia</h3>
+                <p>
+                    Utilizamos a inovação e a tecnologia como ferramentas
+                    para melhorar a aprendizagem.
+                </p>
+            </div>
+
+            <div class="pilar">
+                <h3>Responsabilidade Social</h3>
+                <p>
+                    Procuramos contribuir para o desenvolvimento da comunidade.
+                </p>
+            </div>
+        </div>
+
+        <div class="sobre-cursos">
+           <h2>Cursos Disponíveis</h2>
+
+    <ul>
+        <li>Engenharia Florestal</li>
+        <li>Medicina Geral</li>
+        <li>Geologia</li>
+        <li>Antropologia</li>
+        <li>Engenharia Electrónica</li>
+        <li>Ciência da Computação</li>
+        <li>Engenharia Mecânica</li>
+    </ul>
+</div>
+
+
+
+        <div class="sobre-numeros">
+            <h2>A Universidade em Números</h2>
+
+            <div class="numero">
+                <h3>3.500+</h3>
+                <p>Estudantes</p>
+            </div>
+
+            <div class="numero">
+                <h3>7+</h3>
+                <p>Cursos</p>
+            </div>
+
+            <div class="numero">
+                <h3>150+</h3>
+                <p>Docentes</p>
+            </div>
+        </div>
+
+
+        <div class="sobre-diferencial">
+            <h2>O Nosso Diferencial</h2>
+
+            <p>
+                A Universidade Júpiter procura oferecer aos seus estudantes
+                uma formação que vai além da sala de aula, combinando formação
+                profissional, ambiente académico, inovação e desenvolvimento
+                pessoal.
+            </p>
+        </div>
+
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+           
+        
+

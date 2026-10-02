@@ -1,0 +1,642 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Serviços - Universidade Jupiter</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet" />
+    <!-- CSS interno: base do site + ajustes especificos desta pagina -->
+    <style type="text/css" media="screen">
+/*<![CDATA[*/
+/* CSS Variables - Paleta Creme #EEE3D0 / Castanho #54382D */
+:root {
+    /* Fundo principal: Creme | Cartoes e seccoes: Castanho */
+    --color-bg-page: #EEE3D0;
+    --color-bg-surface: #54382D;
+    
+    --color-text-primary: #54382D;
+    --color-text-secondary: #6E5A4E;
+    --color-text-muted: #8A7A6E;
+    --color-text-on-dark: #EEE3D0;
+    
+    --color-accent-solid: #54382D;
+    
+    --color-border: #D5C3A8;
+
+    --font-ui: 'Inter', sans-serif;
+    --font-heading: 'Lora', Georgia, serif;
+    
+    /* Radii */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+}
+
+/* Base Reset & Typography Polish */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-ui);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+    background-color: var(--color-bg-page);
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-text-primary);
+    font-weight: 400; /* More elegant, less heavy */
+    line-height: 1.1;
+    text-wrap: balance;
+    margin-bottom: 0.75em;
+    letter-spacing: -0.02em;
+}
+
+p {
+    text-wrap: pretty;
+    margin-bottom: 1.5em;
+    color: var(--color-text-secondary);
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-accent-solid);
+}
+
+
+/* Layout */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.bg-light {
+    background-color: var(--color-bg-surface);
+    color: var(--color-text-on-dark);
+    border-top: 1px solid #3E2822;
+    border-bottom: 1px solid #3E2822;
+}
+
+.bg-light .section-title,
+.bg-light .main-feature-title,
+.bg-light .sidebar-title {
+    color: var(--color-text-on-dark);
+    border-bottom-color: var(--color-text-on-dark);
+}
+
+.bg-light .main-feature-text,
+.bg-light .sidebar-text,
+.bg-light .sidebar-meta,
+.bg-light p {
+    color: var(--color-text-on-dark);
+}
+
+.bg-light strong {
+    color: #FFFFFF;
+}
+
+.bg-dark {
+    background-color: #54382D;
+    color: #EEE3D0;
+}
+
+.bg-dark h2, .bg-dark p, .bg-dark strong {
+    color: #EEE3D0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+/* Header */
+.header {
+    background-color: #54382D;
+    border-bottom: 1px solid #3E2822;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #EEE3D0;
+    letter-spacing: -0.01em;
+}
+
+.nav {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav li a {
+    color: #EEE3D0;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+}
+
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 80vh;
+    min-height: 600px;
+    background-image: url('https://images.unsplash.com/photo-1492538368677-f6e0afe31dcc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(84, 56, 45, 0.7); /* Castanho overlay */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: #EEE3D0;
+    max-width: 700px;
+}
+
+.hero-content h1 {
+    color: #EEE3D0;
+    font-size: 4rem;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: #EEE3D0;
+}
+
+/* Buttons (Better UI Polish) */
+.btn {
+    display: inline-block;
+    background-color: #54382D;
+    color: #EEE3D0;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(84, 56, 45, 0.3), 0 2px 4px -1px rgba(84, 56, 45, 0.2);
+}
+
+
+
+/* Cards / Services */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: #54382D;
+    color: #EEE3D0;
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 6px -1px rgba(84,56,45,0.25), 0 2px 4px -1px rgba(84,56,45,0.15); /* Subtle depth */
+    border: 1px solid #3E2822;
+}
+
+
+.card h3 {
+    font-size: 1.5rem;
+    color: #EEE3D0;
+}
+
+.card p {
+    margin-bottom: 0;
+    color: #EEE3D0;
+}
+
+/* About Grid */
+.about-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text p {
+    font-size: 1.125rem;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.stat-item {
+    background-color: #54382D;
+    color: #EEE3D0;
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    box-shadow: 0 1px 3px rgba(84,56,45,0.2);
+    border-left: 4px solid #EEE3D0;
+}
+
+.stat-number {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: #EEE3D0;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #EEE3D0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+}
+
+/* Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.05); /* Image outline */
+}
+
+
+/* Contact Form */
+.contact-flex {
+    display: flex;
+    gap: 4rem;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-form {
+    flex: 1;
+    background-color: #54382D;
+    color: #EEE3D0;
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 15px -3px rgba(84,56,45,0.25);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #EEE3D0;
+    font-size: 0.95rem;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    font-family: var(--font-ui);
+    font-size: 1rem;
+    background-color: #EEE3D0;
+    transition: border-color 0.15s ease;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #54382D;
+    background-color: #FFFFFF;
+}
+
+/* Footer (Specific resets for the newly built layout) */
+.footer {
+    border-top: 1px solid #3E2822;
+}
+.footer h3 {
+    font-family: var(--font-ui);
+    font-weight: 500;
+    letter-spacing: 0;
+    color: #EEE3D0;
+}
+.footer p {
+    color: #EEE3D0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-flex {
+        flex-direction: column;
+    }
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== 1. Layout editorial Servicos (substitui style inline) ===== */
+.news-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+    margin-top: 40px;
+    align-items: start;
+}
+.main-feature-img {
+    width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    margin-bottom: 25px;
+    border-radius: var(--radius-md);
+}
+.main-feature-title {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    border-bottom: 2px solid #EEE3D0;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    color: #EEE3D0;
+    line-height: 1.1;
+}
+.main-feature-text {
+    font-size: 1.1rem;
+    color: #EEE3D0;
+    margin-bottom: 15px;
+}
+.sidebar-features {
+    display: flex;
+    flex-direction: column;
+}
+.sidebar-item {
+    display: flex;
+    gap: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(238,227,208,0.3);
+    margin-bottom: 25px;
+}
+.sidebar-item--last {
+    margin-bottom: 0;
+}
+.sidebar-content {
+    flex: 1;
+}
+.sidebar-title {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: #EEE3D0;
+}
+.sidebar-text {
+    font-size: 0.95rem;
+    color: #EEE3D0;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+.sidebar-meta {
+    font-size: 0.9rem;
+    color: #EEE3D0;
+}
+.sidebar-thumb {
+    width: 140px;
+    height: 100px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border-radius: var(--radius-sm);
+}
+
+/* ===== 2. Footer (substitui os style inline) ===== */
+.footer {
+    padding: 40px 0;
+    background-color: #54382D;
+    color: #EEE3D0;
+}
+.footer-layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    text-align: left;
+}
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+}
+.footer-col--wide {
+    min-width: 250px;
+}
+.footer-title {
+    color: #EEE3D0;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-list li {
+    margin-bottom: 10px;
+}
+.footer-link {
+    color: #EEE3D0;
+    text-decoration: none;
+}
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+@media (max-width: 900px) {
+    .news-layout {
+        grid-template-columns: 1fr;
+    }
+}
+/* Movimento reduzido: sem animacoes */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+/*]]>*/
+    </style>
+</head>
+<body>
+    <!-- Cabecalho -->
+    <div class="header">
+        <div class="container header-container">
+            <div class="logo">Universidade Jupiter</div>
+            <ul class="nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre-nos.html">Sobre a Universidade</a></li>
+                <li><a href="servicos.html">Serviços e Produtos</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contacto.html">Contato</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Serviços e Produtos (Cursos) -->
+    <div id="servicos" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Faculdades e Cursos</h2>
+            <div class="news-layout">
+                <!-- Main Feature -->
+                <div class="main-feature">
+                    <img class="main-feature-img" src="imagens/campus-estudantes.jpg" alt="Laboratório" />
+                    <h3 class="main-feature-title">Faculdade de Engenharia e Ciências Exactas</h3>
+                    <p class="main-feature-text">Na linha da frente do desenvolvimento tecnológico, os nossos laboratórios de vanguarda e corpo docente internacional preparam os estudantes para resolver os desafios estruturais e tecnológicos do futuro.</p>
+                    <p class="main-feature-text"><strong>Cursos de Graduação e Especialização:</strong> Engenharia Florestal, Geologia, Engenharia Electrónica, e Ciências da Computação.</p>
+                </div>
+                <!-- Sidebar list -->
+                <div class="sidebar-features">
+                    <div class="sidebar-item">
+                        <div class="sidebar-content">
+                            <h4 class="sidebar-title">Faculdade de Gestão e Comércio</h4>
+                            <p class="sidebar-text">Formando os líderes de negócios do futuro com uma perspetiva global e orientada à inovação corporativa.</p>
+                            <p class="sidebar-meta"><strong>Cursos:</strong> Contabilidade, Hotelaria e Gestão, Turismo.</p>
+                        </div>
+                        <img class="sidebar-thumb" src="imagens/campus-estudantes.jpg" alt="Faculdade" />
+                    </div>                    <div class="sidebar-item">
+                        <div class="sidebar-content">
+                            <h4 class="sidebar-title">Faculdade de Ciências da Saúde</h4>
+                            <p class="sidebar-text">Pesquisa clínica avançada e compromisso inabalável com o bem-estar humano em modernos hospitais universitários.</p>
+                            <p class="sidebar-meta"><strong>Cursos:</strong> Medicina Geral.</p>
+                        </div>
+                        <img class="sidebar-thumb" src="imagens/campus-estudantes.jpg" alt="Saúde" />
+                    </div>                    <div class="sidebar-item sidebar-item--last">
+                        <div class="sidebar-content">
+                            <h4 class="sidebar-title">Faculdade de Humanidades e Direito</h4>
+                            <p class="sidebar-text">Promovendo o pensamento crítico, a ética, e a compreensão abrangente das dinâmicas sociais globais.</p>
+                            <p class="sidebar-meta"><strong>Cursos:</strong> Antropologia, Direito.</p>
+                        </div>
+                        <img class="sidebar-thumb" src="imagens/college-students.jpg" alt="Direito" />
+                    </div>                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Vida Universitária e Apoios -->
+    <div class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Vida Universitária &amp; Apoios</h2>
+            <div class="news-layout">
+                <!-- Main Feature: Extensão -->
+                <div class="main-feature">
+                    <img class="main-feature-img" src="imagens/college-students.jpg" alt="Extensão Universitária" />
+                    <h3 class="main-feature-title">Extensão Universitária</h3>
+                    <p class="main-feature-text">A Universidade Jupiter acredita que o saber tem responsabilidade social. Os nossos programas de extensão levam educação, saúde e inovação directamente às comunidades, através de clínicas jurídicas e médicas gratuitas, projetos de inovação rural, ateliers de literacia digital e parcerias com municípios locais.</p>
+                    <p class="main-feature-text">Mais de <strong>15.000 cidadãos</strong> são anualmente impactados pelas nossas iniciativas de extensão, colocando a universidade no coração do desenvolvimento regional.</p>
+                </div>
+                <!-- Sidebar -->
+                <div class="sidebar-features">
+                    <div class="sidebar-item">
+                        <div class="sidebar-content">
+                            <h4 class="sidebar-title">Eventos Culturais</h4>
+                            <p class="sidebar-text">Fomentamos a arte e a expressão através de uma agenda cultural vibrante. Acolhemos o Festival de Outono, exposições mensais, ciclos de cinema independente e a emblemática Semana de Teatro Universitário.</p>
+                        </div>
+                        <img class="sidebar-thumb" src="imagens/campus-estudantes.jpg" alt="Eventos Culturais" />
+                    </div>
+                    <div class="sidebar-item">
+                        <div class="sidebar-content">
+                            <h4 class="sidebar-title">Bolsa Completa (100%)</h4>
+                            <p class="sidebar-text">Atribuídas a estudantes de alto mérito académico. Cobre propinas, alojamento e subsídio de alimentação durante todo o curso de graduação.</p>
+                        </div>
+                        <img class="sidebar-thumb" src="imagens/campus-estudantes.jpg" alt="Bolsa Completa" />
+                    </div>
+                    <div class="sidebar-item sidebar-item--last">
+                        <div class="sidebar-content">
+                            <h4 class="sidebar-title">Bolsa Parcial (25%–75%)</h4>
+                            <p class="sidebar-text">Com base em critérios socioeconómicos, apoiamos actualmente cerca de <strong>30% dos estudantes</strong> com reduções progressivas nas propinas, garantindo que o talento não encontra barreiras financeiras.</p>
+                        </div>
+                        <img class="sidebar-thumb" src="imagens/college-students.jpg" alt="Bolsa Parcial" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="footer-layout">
+                <div class="footer-col footer-col--wide">
+                    <h3 class="footer-title">Universidade Jupiter</h3>
+                    <p>&copy; 2026 Todos os direitos reservados.<br />Instituição de Ensino Superior.</p>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Links Rápidos</h3>
+                    <ul class="footer-list">
+                        <li><a class="footer-link" href="candidatura.html">Formulário de Candidatura</a></li>
+                        <li><a class="footer-link" href="servicos.html">Jornal Acadêmico</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Redes Sociais</h3>
+                    <div class="footer-social">
+                        <a class="footer-link" href="servicos.html">Facebook</a>
+                        <a class="footer-link" href="servicos.html">Instagram</a>
+                        <a class="footer-link" href="servicos.html">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>

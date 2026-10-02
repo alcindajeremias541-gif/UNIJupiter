@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#9fd0df"/><stop offset="1" stop-color="#e8d7bb"/></linearGradient></defs>
+<rect width="1200" height="700" fill="url(#sky)"/><rect y="430" width="1200" height="270" fill="#72935d"/>
+<circle cx="150" cy="145" r="70" fill="#6f8e53"/><circle cx="1030" cy="140" r="90" fill="#6f8e53"/><rect x="145" y="200" width="12" height="250" fill="#6b4b32"/><rect x="1025" y="225" width="12" height="225" fill="#6b4b32"/>
+<rect x="370" y="440" width="460" height="45" rx="18" fill="#5d4534"/><rect x="410" y="485" width="20" height="90" fill="#5d4534"/><rect x="770" y="485" width="20" height="90" fill="#5d4534"/>
+<circle cx="470" cy="390" r="48" fill="#4f3329"/><circle cx="600" cy="365" r="48" fill="#7b4f39"/><circle cx="730" cy="390" r="48" fill="#9a6a48"/>
+<path d="M420 445q50-75 100 0v45H420zM550 420q50-75 100 0v65H550zM680 445q50-75 100 0v45H680z" fill="#315c72"/>
+<text x="600" y="635" text-anchor="middle" font-family="Arial" font-size="42" font-weight="700" fill="#30482a">ÁREA DE CONVIVÊNCIA</text>
+</svg>
