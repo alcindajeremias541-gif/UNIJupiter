@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
     /* =====================================================
        1. MENU MOBILE — DOM
     ====================================================== */
-    const menuButton = document.getElementById("mobile-menu-button");
-    const mainNav = document.getElementById("main-nav");
+    const menuButton = document.getElementById("botao-menu");
+    const mainNav = document.getElementById("navegacao-principal");
 
     if (menuButton && mainNav) {
         menuButton.addEventListener("click", () => {
