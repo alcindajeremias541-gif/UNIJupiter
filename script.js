@@ -125,43 +125,63 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =====================================================
-       5. FORMULÁRIO DE CONTACTO — DOM + FETCH
+       5. FORMULÁRIO DE CONTACTO — 100% ESTÁTICO
+       Validação em JS, sem backend. Guarda no localStorage.
     ====================================================== */
     const contactForm = document.getElementById("contact-form");
     if (contactForm) {
-        contactForm.addEventListener("submit", async (event) => {
+        contactForm.addEventListener("submit", (event) => {
             event.preventDefault();
 
             const status = document.getElementById("contact-status");
             const button = contactForm.querySelector("button[type='submit']");
             const formData = new FormData(contactForm);
             const data = Object.fromEntries(formData.entries());
+            const nome = String(data.nome || "").trim();
+            const email = String(data.email || "").trim();
+            const mensagem = String(data.mensagem || "").trim();
 
             if (status) status.textContent = "A enviar mensagem...";
             if (button) button.disabled = true;
 
-            try {
-                const response = await fetch(contactForm.action, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(data)
-                });
-                const result = await response.json();
+            const erro = !nome || !email || !mensagem
+                ? "Preencha todos os campos obrigatórios."
+                : !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+                    ? "Introduza um endereço de e-mail válido."
+                    : mensagem.length < 10
+                        ? "A mensagem deve ter pelo menos 10 caracteres."
+                        : null;
 
-                if (!response.ok) throw new Error(result.message || "Erro ao enviar.");
-                if (status) status.textContent = result.message || "Mensagem enviada com sucesso!";
-                contactForm.reset();
-            } catch (error) {
-                if (status) status.textContent = error.message || "Não foi possível enviar a mensagem.";
-            } finally {
+            if (erro) {
+                if (status) status.textContent = erro;
                 if (button) button.disabled = false;
+                return;
             }
+
+            try {
+                const guardadas = JSON.parse(localStorage.getItem("mensagens-contacto") || "[]");
+                guardadas.push({ ...data, data: new Date().toISOString() });
+                localStorage.setItem("mensagens-contacto", JSON.stringify(guardadas));
+            } catch (e) { /* localStorage indisponível: ignora */ }
+
+            if (status) status.textContent = "Mensagem recebida com sucesso. Obrigado pelo contacto!";
+            contactForm.reset();
+            if (button) button.disabled = false;
         });
     }
 
     /* =====================================================
-       6. FORMULÁRIO DE CANDIDATURA — DOM + FETCH
+       6. FORMULÁRIO DE CANDIDATURA — 100% ESTÁTICO
     ====================================================== */
+    const CURSOS_VALIDOS = [
+        "engenharia-florestal",
+        "medicina-geral",
+        "geologia-e-minas",
+        "antropologia",
+        "engenharia-eletrica",
+        "ciencia-da-computacao",
+        "engenharia-mecanica"
+    ];
     const applicationForm = document.getElementById("application-form");
     if (applicationForm) {
         let status = document.getElementById("application-status");
@@ -174,32 +194,42 @@ document.addEventListener("DOMContentLoaded", () => {
             applicationForm.appendChild(status);
         }
 
-        applicationForm.addEventListener("submit", async (event) => {
+        applicationForm.addEventListener("submit", (event) => {
             event.preventDefault();
 
             const button = applicationForm.querySelector("button[type='submit']");
             const formData = new FormData(applicationForm);
             const data = Object.fromEntries(formData.entries());
+            const nome = String(data.nome || "").trim();
+            const email = String(data.email || "").trim();
+            const curso = String(data.curso || "").trim();
 
             status.textContent = "A enviar candidatura...";
             if (button) button.disabled = true;
 
-            try {
-                const response = await fetch(applicationForm.action, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(data)
-                });
-                const result = await response.json();
+            const erro = !nome || !email || !curso
+                ? "Preencha o nome, e-mail e curso."
+                : !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+                    ? "Introduza um endereço de e-mail válido."
+                    : !CURSOS_VALIDOS.includes(curso)
+                        ? "Selecione um curso válido."
+                        : null;
 
-                if (!response.ok) throw new Error(result.message || "Erro ao enviar candidatura.");
-                status.textContent = result.message || "Candidatura enviada com sucesso!";
-                applicationForm.reset();
-            } catch (error) {
-                status.textContent = error.message || "Não foi possível enviar a candidatura.";
-            } finally {
+            if (erro) {
+                status.textContent = erro;
                 if (button) button.disabled = false;
+                return;
             }
+
+            try {
+                const guardadas = JSON.parse(localStorage.getItem("candidaturas") || "[]");
+                guardadas.push({ ...data, data: new Date().toISOString() });
+                localStorage.setItem("candidaturas", JSON.stringify(guardadas));
+            } catch (e) { /* localStorage indisponível: ignora */ }
+
+            status.textContent = "Candidatura recebida com sucesso. Boa sorte!";
+            applicationForm.reset();
+            if (button) button.disabled = false;
         });
     }
 
