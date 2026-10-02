@@ -2642,17 +2642,17 @@ button:disabled {
 /* CSS Variables - Paleta Creme #EEE3D0 / Castanho #54382D */
 
 .pagina-faq {
-    /* Fundo principal: Creme | Cartoes e seccoes: Castanho */
-    --color-bg-page: #EEE3D0;
-    --color-bg-surface: #54382D;
-    
-    --color-text-primary: #54382D;
-    --color-text-secondary: #6E5A4E;
+    /* Fundo principal: Branco | Tinta igual a pagina sobre */
+    --color-bg-page: #FFFFFF;
+    --color-bg-surface: #FFFFFF;
+
+    --color-text-primary: #182533;
+    --color-text-secondary: #151A22;
     --color-text-muted: #8A7A6E;
-    --color-text-on-dark: #EEE3D0;
-    
-    --color-accent-solid: #54382D;
-    
+    --color-text-on-dark: #FFFFFF;
+
+    --color-accent-solid: #B77A50;
+
     --color-border: #D5C3A8;
 
     --font-ui: 'Inter', sans-serif;
@@ -2719,23 +2719,23 @@ button:disabled {
 }
 
 .pagina-faq .bg-light {
-    background-color: #54382D;
-    color: #EEE3D0;
-    border-top: 1px solid #3E2822;
-    border-bottom: 1px solid #3E2822;
+    background-color: #FFFFFF;
+    color: #151A22;
+    border-top: 1px solid #D5C3A8;
+    border-bottom: 1px solid #D5C3A8;
 }
 
 .pagina-faq .bg-light h2, .pagina-faq .bg-light p, .pagina-faq .bg-light strong {
-    color: #EEE3D0;
+    color: #182533;
 }
 
 .pagina-faq .bg-dark {
-    background-color: #54382D;
-    color: #EEE3D0;
+    background-color: #FFFFFF;
+    color: #151A22;
 }
 
 .pagina-faq .bg-dark h2, .pagina-faq .bg-dark p, .pagina-faq .bg-dark strong {
-    color: #EEE3D0;
+    color: #182533;
 }
 
 .pagina-faq .section-title {
@@ -2825,15 +2825,15 @@ button:disabled {
 
 .pagina-faq .btn {
     display: inline-block;
-    background-color: #54382D;
-    color: #EEE3D0;
+    background-color: #B77A50;
+    color: #FFFFFF;
     padding: 12px 28px;
     font-size: 1rem;
     font-weight: 500;
     border-radius: var(--radius-md);
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 6px -1px rgba(84, 56, 45, 0.3), 0 2px 4px -1px rgba(84, 56, 45, 0.2);
+    box-shadow: 0 4px 6px -1px rgba(183, 122, 80, 0.3), 0 2px 4px -1px rgba(183, 122, 80, 0.2);
 }
 
 /* Cards / Services */
@@ -2845,22 +2845,22 @@ button:disabled {
 }
 
 .pagina-faq .card {
-    background-color: #54382D;
-    color: #EEE3D0;
+    background-color: #FFFFFF;
+    color: #151A22;
     padding: 2.5rem;
     border-radius: var(--radius-lg);
-    box-shadow: 0 4px 6px -1px rgba(84,56,45,0.25), 0 2px 4px -1px rgba(84,56,45,0.15); /* Subtle depth */
-    border: 1px solid #3E2822;
+    box-shadow: 0 4px 6px -1px rgba(21,26,34,0.08), 0 2px 4px -1px rgba(21,26,34,0.06);
+    border: 1px solid #D5C3A8;
 }
 
 .pagina-faq .card h3 {
     font-size: 1.5rem;
-    color: #EEE3D0;
+    color: #182533;
 }
 
 .pagina-faq .card p {
     margin-bottom: 0;
-    color: #EEE3D0;
+    color: #151A22;
 }
 
 /* About Grid */
@@ -2883,25 +2883,26 @@ button:disabled {
 }
 
 .pagina-faq .stat-item {
-    background-color: #54382D;
-    color: #EEE3D0;
+    background-color: #FFFFFF;
+    color: #151A22;
     padding: 2rem;
     border-radius: var(--radius-md);
-    box-shadow: 0 1px 3px rgba(84,56,45,0.2);
-    border-left: 4px solid #EEE3D0;
+    box-shadow: 0 1px 3px rgba(21,26,34,0.08);
+    border: 1px solid #D5C3A8;
+    border-left: 4px solid #B77A50;
 }
 
 .pagina-faq .stat-number {
     font-family: var(--font-heading);
     font-size: 3rem;
-    color: #EEE3D0;
+    color: #182533;
     margin-bottom: 0.5rem;
     line-height: 1;
 }
 
 .pagina-faq .stat-label {
     font-size: 0.875rem;
-    color: #EEE3D0;
+    color: #151A22;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-weight: 500;
@@ -2937,11 +2938,12 @@ button:disabled {
 
 .pagina-faq .contact-form {
     flex: 1;
-    background-color: #54382D;
-    color: #EEE3D0;
+    background-color: #FFFFFF;
+    color: #151A22;
     padding: 3rem;
     border-radius: var(--radius-lg);
-    box-shadow: 0 10px 15px -3px rgba(84,56,45,0.25);
+    border: 1px solid #D5C3A8;
+    box-shadow: 0 10px 15px -3px rgba(21,26,34,0.08);
 }
 
 .pagina-faq .form-group {
@@ -2952,7 +2954,7 @@ button:disabled {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 500;
-    color: #EEE3D0;
+    color: #182533;
     font-size: 0.95rem;
 }
 
@@ -2963,13 +2965,13 @@ button:disabled {
     border: 1px solid var(--color-border);
     font-family: var(--font-ui);
     font-size: 1rem;
-    background-color: #EEE3D0;
+    background-color: #FFFFFF;
     transition: border-color 0.15s ease;
 }
 
 .pagina-faq .form-group input:focus, .pagina-faq .form-group textarea:focus {
     outline: none;
-    border-color: #54382D;
+    border-color: #B77A50;
     background-color: #FFFFFF;
 }
 
@@ -3030,28 +3032,28 @@ button:disabled {
 }
 
 .pagina-faq .faq-item {
-    background-color: #54382D;
-    border: 1px solid #3E2822;
+    background-color: #FFFFFF;
+    border: 1px solid #D5C3A8;
     border-radius: var(--radius-md);
     padding: 1.5rem 2rem;
-    box-shadow: 0 4px 6px -1px rgba(84,56,45,0.25);
+    box-shadow: 0 4px 6px -1px rgba(21,26,34,0.08);
 }
 
 .pagina-faq .faq-item h3 {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
-    color: #EEE3D0;
+    color: #182533;
 }
 
 .pagina-faq .faq-item p {
     margin-bottom: 0;
-    color: #EEE3D0;
+    color: #151A22;
 }
 
-/* Titulo da secao FAQ sobre fundo Creme */
+/* Titulo da secao FAQ sobre fundo branco */
 
 .pagina-faq #faq .section-title {
-    color: #54382D;
+    color: #182533;
 }
 
 /* ===== 2. Footer (substitui os style inline) ===== */
