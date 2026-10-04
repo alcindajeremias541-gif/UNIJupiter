@@ -88,16 +88,28 @@ document.addEventListener("DOMContentLoaded", () => {
         const heading = courseGrid.parentElement;
         const searchBox = document.createElement("div");
         searchBox.className = "course-search";
-        searchBox.innerHTML = `
-            <label for="course-search-input">Pesquisar curso</label>
-            <input id="course-search-input" type="search" placeholder="Ex.: Computação, Medicina..." autocomplete="off">
-            <p id="course-search-result" class="course-search-result" aria-live="polite"></p>
-        `;
+
+        const label = document.createElement("label");
+        label.htmlFor = "course-search-input";
+        label.textContent = "Pesquisar curso";
+
+        const input = document.createElement("input");
+        input.id = "course-search-input";
+        input.type = "search";
+        input.placeholder = "Ex.: Computação, Medicina...";
+        input.autocomplete = "off";
+
+        const result = document.createElement("p");
+        result.id = "course-search-result";
+        result.className = "course-search-result";
+        result.setAttribute("aria-live", "polite");
+
+        searchBox.appendChild(label);
+        searchBox.appendChild(input);
+        searchBox.appendChild(result);
 
         heading.insertBefore(searchBox, courseGrid);
 
-        const input = searchBox.querySelector("#course-search-input");
-        const result = searchBox.querySelector("#course-search-result");
         const cards = courseGrid.querySelectorAll(".course-card");
 
         const filterCourses = () => {
