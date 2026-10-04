@@ -1,0 +1,584 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt" lang="pt">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Mapa do site da Universidade Jupiter — encontre facilmente todas as páginas disponíveis." />
+    <meta name="theme-color" content="#151a22" />
+    <title>Mapa do Site | Universidade Jupiter</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <style type="text/css">
+        /* ── Sitemap Page Styles ── */
+        .sitemap-hero {
+            background: linear-gradient(135deg, #151a22 0%, #1e2a3a 60%, #0d1a2b 100%);
+            padding: 100px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sitemap-hero::before {
+            content: "♃";
+            position: absolute;
+            font-size: 400px;
+            opacity: 0.03;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            font-family: serif;
+        }
+
+        .sitemap-hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: #f0ece4;
+            margin-bottom: 0.5rem;
+        }
+
+        .sitemap-hero h1 span {
+            color: #c8a96e;
+        }
+
+        .sitemap-hero p {
+            color: #8a9ab0;
+            font-size: 1.05rem;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* ── Sitemap Tree ── */
+        .sitemap-section {
+            padding: 80px 0 100px;
+            background: #eee3d0; /* var(--cream) */
+        }
+
+        .sitemap-tree {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* Root node */
+        .sitemap-root {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0;
+        }
+
+        .sitemap-root-node {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #151a22;
+            color: #f0ece4;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 8px 32px rgba(21, 26, 34, 0.25);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .sitemap-root-node:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 40px rgba(21, 26, 34, 0.35);
+        }
+
+        .sitemap-root-node .logo-symbol {
+            color: #c8a96e;
+            font-size: 1.5rem;
+        }
+
+        /* Connector line from root to branches */
+        .sitemap-connector {
+            display: flex;
+            justify-content: center;
+        }
+
+        .sitemap-connector-line {
+            width: 2px;
+            height: 48px;
+            background: linear-gradient(to bottom, #151a22, #c8a96e);
+        }
+
+        /* Branch row */
+        .sitemap-branches {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            position: relative;
+        }
+
+        /* Horizontal bar above branches */
+        .sitemap-branches::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: calc(12.5%);
+            right: calc(12.5%);
+            height: 2px;
+            background: #c8a96e;
+        }
+
+        /* Each branch column */
+        .sitemap-branch {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+            position: relative;
+        }
+
+        /* Small vertical line above each card */
+        .sitemap-branch::before {
+            content: "";
+            width: 2px;
+            height: 40px;
+            background: #c8a96e;
+            display: block;
+        }
+
+        /* Card */
+        .sitemap-card {
+            width: 100%;
+            background: #ffffff;
+            border-radius: 14px;
+            box-shadow: 0 4px 20px rgba(21, 26, 34, 0.08);
+            padding: 22px 18px 18px;
+            text-align: center;
+            border-top: 3px solid #c8a96e;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .sitemap-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 32px rgba(21, 26, 34, 0.14);
+        }
+
+        .sitemap-card-icon {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .sitemap-card-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #151a22;
+            margin-bottom: 6px;
+        }
+
+        .sitemap-card-desc {
+            font-size: 0.78rem;
+            color: #6b7a8d;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .sitemap-card-tag {
+            display: inline-block;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #c8a96e;
+            background: rgba(200, 169, 110, 0.1);
+            border-radius: 4px;
+            padding: 3px 8px;
+        }
+
+        /* Featured card (Candidatura) */
+        .sitemap-card.featured {
+            border-top-color: #151a22;
+            background: #151a22;
+        }
+
+        .sitemap-card.featured .sitemap-card-title {
+            color: #f0ece4;
+        }
+
+        .sitemap-card.featured .sitemap-card-desc {
+            color: #8a9ab0;
+        }
+
+        .sitemap-card.featured .sitemap-card-tag {
+            color: #c8a96e;
+            background: rgba(200, 169, 110, 0.15);
+        }
+
+        /* Legend / Priority table */
+        .sitemap-legend {
+            margin-top: 60px;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 20px rgba(21, 26, 34, 0.07);
+        }
+
+        .sitemap-legend h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: #151a22;
+            margin-bottom: 20px;
+        }
+
+        .sitemap-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .sitemap-table th {
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #8a9ab0;
+            padding: 10px 16px;
+            border-bottom: 2px solid #f0ece4;
+        }
+
+        .sitemap-table td {
+            padding: 12px 16px;
+            color: #2c3e50;
+            border-bottom: 1px solid #f0ece4;
+            vertical-align: middle;
+        }
+
+        .sitemap-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .sitemap-table td a {
+            color: #151a22;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .sitemap-table td a:hover {
+            color: #c8a96e;
+        }
+
+        .priority-bar {
+            display: inline-block;
+            height: 6px;
+            border-radius: 3px;
+            background: linear-gradient(to right, #c8a96e, #a07840);
+            vertical-align: middle;
+        }
+
+        .priority-label {
+            font-size: 0.78rem;
+            color: #6b7a8d;
+            margin-left: 8px;
+        }
+
+        /* XML link note */
+        .sitemap-xml-note {
+            margin-top: 40px;
+            background: linear-gradient(135deg, #151a22, #1e2a3a);
+            border-radius: 14px;
+            padding: 24px 32px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .sitemap-xml-note p {
+            color: #8a9ab0;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .sitemap-xml-note strong {
+            color: #f0ece4;
+        }
+
+        .sitemap-xml-note a {
+            color: #c8a96e;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .sitemap-xml-note a:hover {
+            text-decoration: underline;
+        }
+
+        .sitemap-xml-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .sitemap-branches {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .sitemap-branches::before {
+                left: 25%;
+                right: 25%;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .sitemap-branches {
+                grid-template-columns: 1fr;
+            }
+
+            .sitemap-branches::before {
+                display: none;
+            }
+
+            .sitemap-branch::before {
+                height: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         CABEÇALHO
+    ====================================================== -->
+
+    <header class="header"><div class="container nav"><a href="index.xhtml" class="logo" aria-label="Universidade Jupiter — Início"><span class="logo-symbol">♃</span><span>JUPITER</span></a><button class="menu-toggle" id="botao-menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="navegacao-principal"><span></span><span></span><span></span></button><nav id="navegacao-principal" aria-label="Navegação principal"><a href="index.xhtml">Início</a><a href="sobre-nos.xhtml">Sobre nós</a><a href="cursos.xhtml">Cursos</a><a href="campus.xhtml">Campus</a><a href="servicoss.xhtml">Serviços</a><a href="faq.xhtml">FAQ</a><a href="contactos.xhtml">Contacto</a></nav><a href="candidatura.xhtml" class="nav-button">Candidatar-se</a></div></header>
+
+    <main>
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="sitemap-hero">
+            <div class="container">
+                <p class="eyebrow">UNIVERSIDADE JUPITER</p>
+                <h1>Mapa do <span>Site</span></h1>
+                <p>Navegue facilmente por todas as páginas da Universidade Jupiter.</p>
+            </div>
+        </section>
+
+        <!-- =================================================
+             SITEMAP TREE
+        ================================================== -->
+
+        <section class="sitemap-section">
+            <div class="container">
+                <div class="sitemap-tree">
+
+                    <!-- Root -->
+                    <div class="sitemap-root">
+                        <a href="index.xhtml" class="sitemap-root-node">
+                            <span class="logo-symbol">♃</span>
+                            Universidade Jupiter
+                        </a>
+                    </div>
+
+                    <!-- Connector -->
+                    <div class="sitemap-connector">
+                        <div class="sitemap-connector-line"></div>
+                    </div>
+
+                    <!-- Branches -->
+                    <div class="sitemap-branches">
+
+                        <div class="sitemap-branch">
+                            <a href="sobre-nos.xhtml" class="sitemap-card">
+                                <span class="sitemap-card-icon">🎓</span>
+                                <div class="sitemap-card-title">Sobre nós</div>
+                                <p class="sitemap-card-desc">A nossa missão, visão, história e corpo docente.</p>
+                                <span class="sitemap-card-tag">Institucional</span>
+                            </a>
+                        </div>
+
+                        <div class="sitemap-branch">
+                            <a href="cursos.xhtml" class="sitemap-card">
+                                <span class="sitemap-card-icon">📚</span>
+                                <div class="sitemap-card-title">Cursos</div>
+                                <p class="sitemap-card-desc">Engenharia, Medicina, Geologia, Antropologia e mais.</p>
+                                <span class="sitemap-card-tag">Académico</span>
+                            </a>
+                        </div>
+
+                        <div class="sitemap-branch">
+                            <a href="campus.xhtml" class="sitemap-card">
+                                <span class="sitemap-card-icon">🏛️</span>
+                                <div class="sitemap-card-title">Campus</div>
+                                <p class="sitemap-card-desc">Instalações, laboratórios e vida no campus.</p>
+                                <span class="sitemap-card-tag">Infraestrutura</span>
+                            </a>
+                        </div>
+
+                        <div class="sitemap-branch">
+                            <a href="servicoss.xhtml" class="sitemap-card">
+                                <span class="sitemap-card-icon">⚙️</span>
+                                <div class="sitemap-card-title">Serviços</div>
+                                <p class="sitemap-card-desc">Faculdades, bolsas, extensão universitária e apoios.</p>
+                                <span class="sitemap-card-tag">Serviços</span>
+                            </a>
+                        </div>
+
+                        <div class="sitemap-branch">
+                            <a href="faq.xhtml" class="sitemap-card">
+                                <span class="sitemap-card-icon">❓</span>
+                                <div class="sitemap-card-title">FAQ</div>
+                                <p class="sitemap-card-desc">Perguntas frequentes sobre admissão e vida académica.</p>
+                                <span class="sitemap-card-tag">Suporte</span>
+                            </a>
+                        </div>
+
+                        <div class="sitemap-branch">
+                            <a href="contactos.xhtml" class="sitemap-card">
+                                <span class="sitemap-card-icon">✉️</span>
+                                <div class="sitemap-card-title">Contacto</div>
+                                <p class="sitemap-card-desc">Fale connosco por telefone, e-mail ou formulário.</p>
+                                <span class="sitemap-card-tag">Contacto</span>
+                            </a>
+                        </div>
+
+                        <div class="sitemap-branch">
+                            <a href="candidatura.xhtml" class="sitemap-card featured">
+                                <span class="sitemap-card-icon">✍️</span>
+                                <div class="sitemap-card-title">Candidatura</div>
+                                <p class="sitemap-card-desc">Submeta a sua candidatura à Universidade Jupiter.</p>
+                                <span class="sitemap-card-tag">Admissão</span>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- /sitemap-branches -->
+
+                    <!-- Legend / Table -->
+                    <div class="sitemap-legend">
+                        <h2>Todas as páginas</h2>
+                        <table class="sitemap-table">
+                            <thead>
+                                <tr>
+                                    <th>Página</th>
+                                    <th>URL</th>
+                                    <th>Prioridade</th>
+                                    <th>Atualização</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>🏠 Início</td>
+                                    <td><a href="index.xhtml">index.xhtml</a></td>
+                                    <td>
+                                        <span class="priority-bar" style="width:90px"></span>
+                                        <span class="priority-label">1.0 — Máxima</span>
+                                    </td>
+                                    <td>Semanal</td>
+                                </tr>
+                                <tr>
+                                    <td>📚 Cursos</td>
+                                    <td><a href="cursos.xhtml">cursos.xhtml</a></td>
+                                    <td>
+                                        <span class="priority-bar" style="width:80px"></span>
+                                        <span class="priority-label">0.9 — Alta</span>
+                                    </td>
+                                    <td>Mensal</td>
+                                </tr>
+                                <tr>
+                                    <td>✍️ Candidatura</td>
+                                    <td><a href="candidatura.xhtml">candidatura.xhtml</a></td>
+                                    <td>
+                                        <span class="priority-bar" style="width:80px"></span>
+                                        <span class="priority-label">0.9 — Alta</span>
+                                    </td>
+                                    <td>Mensal</td>
+                                </tr>
+                                <tr>
+                                    <td>🎓 Sobre nós</td>
+                                    <td><a href="sobre-nos.xhtml">sobre-nos.xhtml</a></td>
+                                    <td>
+                                        <span class="priority-bar" style="width:70px"></span>
+                                        <span class="priority-label">0.8 — Alta</span>
+                                    </td>
+                                    <td>Mensal</td>
+                                </tr>
+                                <tr>
+                                    <td>🏛️ Campus</td>
+                                    <td><a href="campus.xhtml">campus.xhtml</a></td>
+                                    <td>
+                                        <span class="priority-bar" style="width:60px"></span>
+                                        <span class="priority-label">0.7 — Média</span>
+                                    </td>
+                                    <td>Mensal</td>
+                                </tr>
+                                <tr>
+                                    <td>⚙️ Serviços</td>
+                                    <td><a href="servicoss.xhtml">servicoss.xhtml</a></td>
+                                    <td>
+                                        <span class="priority-bar" style="width:60px"></span>
+                                        <span class="priority-label">0.7 — Média</span>
+                                    </td>
+                                    <td>Mensal</td>
+                                </tr>
+                                <tr>
+                                    <td>❓ FAQ</td>
+                                    <td><a href="faq.xhtml">faq.xhtml</a></td>
+                                    <td>
+                                        <span class="priority-bar" style="width:50px"></span>
+                                        <span class="priority-label">0.6 — Normal</span>
+                                    </td>
+                                    <td>Mensal</td>
+                                </tr>
+                                <tr>
+                                    <td>✉️ Contacto</td>
+                                    <td><a href="contactos.xhtml">contactos.xhtml</a></td>
+                                    <td>
+                                        <span class="priority-bar" style="width:50px"></span>
+                                        <span class="priority-label">0.6 — Normal</span>
+                                    </td>
+                                    <td>Mensal</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- XML sitemap note -->
+                        <div class="sitemap-xml-note">
+                            <span class="sitemap-xml-icon">🗂️</span>
+                            <p>
+                                <strong>Sitemap XML para motores de busca:</strong> o ficheiro
+                                <a href="sitemap.xml">sitemap.xml</a> está disponível na raiz do site
+                                e pode ser submetido ao Google Search Console e ao Bing Webmaster Tools
+                                para melhorar a indexação.
+                            </p>
+                        </div>
+
+                    </div>
+                    <!-- /sitemap-legend -->
+
+                </div>
+                <!-- /sitemap-tree -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =====================================================
+         RODAPÉ
+    ====================================================== -->
+
+    <footer class="site-footer"><div class="container site-footer-grid"><div class="site-footer-brand site-footer-col"><a href="index.xhtml" class="logo"><span class="logo-symbol">♃</span><span>JUPITER</span></a><p>Universidade Jupiter — excelência, conhecimento e futuro.</p><div class="site-footer-social"><a href="contactos.xhtml">Facebook</a><a href="contactos.xhtml">Instagram</a><a href="contactos.xhtml">LinkedIn</a></div></div><div class="site-footer-col"><h4>Links Principais</h4><a href="index.xhtml">Início</a><a href="sobre-nos.xhtml">Sobre nós</a><a href="cursos.xhtml">Cursos</a><a href="campus.xhtml">Campus</a><a href="servicoss.xhtml">Serviços</a><a href="faq.xhtml">FAQ</a><a href="contactos.xhtml">Contacto</a></div><div class="site-footer-col"><h4>Académico</h4><a href="candidatura.xhtml">Formulário de Candidatura</a><a href="servicoss.xhtml">Jornal Académico</a><a href="faq.xhtml">Perguntas Frequentes</a></div><div class="site-footer-col"><h4>Secretaria</h4><address><strong>Tel: </strong><a href="tel:+258843290000">+258 84 329 0000</a><a href="tel:+258863290000">+258 86 329 0000</a><strong>E-mail: </strong><a href="mailto:contato@universidadejupiter.edu">contato@universidadejupiter.edu</a><span>Campus Principal, Avenida do Conhecimento, 1000</span></address></div></div><div class="container site-footer-bottom"><span>© <span data-current-year="true">2026</span> Universidade Jupiter. Todos os direitos reservados.</span><span>Instituição de Ensino Superior.</span></div></footer>
+
+    <script src="script.js" type="text/javascript"></script>
+</body>
+</html>

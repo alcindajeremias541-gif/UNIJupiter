@@ -725,7 +725,7 @@ h2 {
 
 .courses {
     padding: 110px 0;
-    background: #e2d2bd;
+    background: var(--cream);
 }
 
 .section-heading {
@@ -1576,7 +1576,7 @@ button:disabled {
     position: relative;
     overflow: hidden;
     min-height: 360px;
-    background: #eee3d0;
+    background: var(--cream);
     border-radius: 4px;
     box-shadow: 0 18px 45px rgba(16, 21, 27, 0.12);
 }
@@ -1657,7 +1657,7 @@ button:disabled {
 }
 
 .pagina-sobre {
-    background-color: #EEE3D0;
+    background-color: var(--cream);
     color: #151A22;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
@@ -2101,9 +2101,9 @@ button:disabled {
 /* CSS Variables - Paleta Creme #EEE3D0 / Castanho #54382D */
 
 .pagina-servicos {
-    /* Fundo principal: Creme | Cartoes e seccoes: Castanho */
-    --color-bg-page: #EEE3D0;
-    --color-bg-surface: #54382D;
+    /* Fundo principal: Creme | Secções escuras: Castanho */
+    --color-bg-page: var(--cream);
+    --color-bg-surface: var(--cream);
     
     --color-text-primary: #54382D;
     --color-text-secondary: #6E5A4E;
@@ -2140,7 +2140,7 @@ button:disabled {
     font-family: var(--font-ui);
     color: var(--color-text-primary);
     line-height: 1.6;
-    background-color: var(--color-bg-page);
+    background-color: var(--cream);
     font-size: 16px;
 }
 
@@ -2178,23 +2178,23 @@ button:disabled {
 }
 
 .pagina-servicos .bg-light {
-    background-color: var(--color-bg-surface);
-    color: var(--color-text-on-dark);
-    border-top: 1px solid #3E2822;
-    border-bottom: 1px solid #3E2822;
+    background-color: var(--cream);
+    color: var(--color-text-primary);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
 }
 
 .pagina-servicos .bg-light .section-title, .pagina-servicos .bg-light .main-feature-title, .pagina-servicos .bg-light .sidebar-title {
-    color: var(--color-text-on-dark);
-    border-bottom-color: var(--color-text-on-dark);
+    color: var(--color-text-primary);
+    border-bottom-color: var(--color-border);
 }
 
 .pagina-servicos .bg-light .main-feature-text, .pagina-servicos .bg-light .sidebar-text, .pagina-servicos .bg-light .sidebar-meta, .pagina-servicos .bg-light p {
-    color: var(--color-text-on-dark);
+    color: var(--color-text-secondary);
 }
 
 .pagina-servicos .bg-light strong {
-    color: #FFFFFF;
+    color: var(--color-text-primary);
 }
 
 .pagina-servicos .bg-dark {
@@ -2431,7 +2431,7 @@ button:disabled {
     border: 1px solid var(--color-border);
     font-family: var(--font-ui);
     font-size: 1rem;
-    background-color: #EEE3D0;
+    background-color: var(--cream);
     transition: border-color 0.15s ease;
 }
 
@@ -2642,9 +2642,9 @@ button:disabled {
 /* CSS Variables - Paleta Creme #EEE3D0 / Castanho #54382D */
 
 .pagina-faq {
-    /* Fundo principal: Branco | Tinta igual a pagina sobre */
-    --color-bg-page: #FFFFFF;
-    --color-bg-surface: #FFFFFF;
+    /* Fundo principal: Creme uniforme | igual às restantes páginas */
+    --color-bg-page: var(--cream);
+    --color-bg-surface: var(--cream);
 
     --color-text-primary: #182533;
     --color-text-secondary: #151A22;
@@ -3114,4 +3114,780 @@ button:disabled {
         animation: none !important;
         transition: none !important;
     }
+}
+
+/* ---- contactos.html — UI da imagem de referência ---- */
+
+.pagina-contacto {
+    --font-ui: 'Inter', Arial, sans-serif;
+    --font-heading: 'Lora', Georgia, serif;
+    font-family: var(--font-ui);
+    background-color: #0f172a;
+    color: #e2e8f0;
+    -webkit-font-smoothing: antialiased;
+}
+
+.pagina-contacto * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header branco */
+.pagina-contacto .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.pagina-contacto .nav {
+    min-height: 80px;
+    border-bottom: 0;
+}
+
+.pagina-contacto .logo {
+    font-family: var(--font-heading);
+    font-size: 1.55rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: #0f172a;
+}
+
+.pagina-contacto #navegacao-principal {
+    gap: 28px;
+}
+
+.pagina-contacto #navegacao-principal a {
+    color: #4b5563;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.pagina-contacto #navegacao-principal a::after {
+    display: none;
+}
+
+.pagina-contacto #navegacao-principal a:hover,
+.pagina-contacto #navegacao-principal a[aria-current="page"] {
+    color: #0f172a;
+}
+
+.pagina-contacto .menu-toggle,
+.pagina-contacto #botao-menu {
+    border-color: #cbd5e1;
+    color: #0f172a;
+}
+
+/* Secção escura */
+.pagina-contacto .section {
+    padding: 100px 0 120px;
+}
+
+.pagina-contacto .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pagina-contacto .bg-dark {
+    background-color: #0f172a;
+    color: #e2e8f0;
+}
+
+.pagina-contacto .contact-flex {
+    display: flex;
+    gap: 5rem;
+    align-items: flex-start;
+}
+
+.pagina-contacto .contact-info {
+    flex: 1;
+    padding-top: 8px;
+}
+
+.pagina-contacto .contact-info h2 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: 1.7rem;
+    letter-spacing: 0;
+    color: #ffffff;
+    margin-bottom: 1.25rem;
+}
+
+.pagina-contacto .contact-info p {
+    color: #e2e8f0;
+    font-size: 1rem;
+    line-height: 1.65;
+    margin-bottom: 1.75rem;
+}
+
+.pagina-contacto .contact-info strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* Cartão branco do formulário */
+.pagina-contacto .contact-form {
+    flex: 1.15;
+    background: #ffffff;
+    color: #111827;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
+}
+
+.pagina-contacto .form-group {
+    margin-bottom: 1.6rem;
+}
+
+.pagina-contacto .form-group label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+    font-size: 0.98rem;
+    color: #111827;
+}
+
+.pagina-contacto .form-group input,
+.pagina-contacto .form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    background: #f8fafc;
+    font-family: var(--font-ui);
+    font-size: 1rem;
+    color: #0f172a;
+    outline: none;
+    transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.pagina-contacto .form-group textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.pagina-contacto .form-group input:focus,
+.pagina-contacto .form-group textarea:focus {
+    border-color: #0ea5e9;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
+}
+
+.pagina-contacto .btn {
+    display: inline-block;
+    background: #0ea5e9;
+    color: #ffffff;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(14, 165, 233, 0.35);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.pagina-contacto .btn:hover {
+    background: #0284c7;
+    transform: translateY(-1px);
+}
+
+.pagina-contacto .form-status {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #475569;
+    min-height: 1.4em;
+}
+
+/* Footer escuro */
+.pagina-contacto .footer {
+    background: #1c1917;
+    color: #e7e5e4;
+    padding: 48px 0;
+    border-top: 1px solid #292524;
+}
+
+.pagina-contacto .footer-layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    text-align: left;
+}
+
+.pagina-contacto .footer-col {
+    flex: 1;
+    min-width: 200px;
+}
+
+.pagina-contacto .footer-col--wide {
+    min-width: 250px;
+}
+
+.pagina-contacto .footer-title {
+    font-family: var(--font-ui);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.pagina-contacto .footer p {
+    color: #a8a29e;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.pagina-contacto .footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pagina-contacto .footer-list li {
+    margin-bottom: 10px;
+}
+
+.pagina-contacto .footer-link {
+    color: #d6d3d1;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.pagina-contacto .footer-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.pagina-contacto .footer-social {
+    display: flex;
+    gap: 18px;
+}
+
+@media (max-width: 900px) {
+    .pagina-contacto .contact-flex {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .pagina-contacto .contact-form {
+        width: 100%;
+        padding: 2rem 1.5rem;
+    }
+
+    .pagina-contacto .section {
+        padding: 70px 0 80px;
+    }
+}
+
+@media (max-width: 850px) {
+    .pagina-contacto #navegacao-principal {
+        display: none;
+    }
+
+    .pagina-contacto #navegacao-principal.is-open {
+        display: flex;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 15px 5% 25px;
+        background: #ffffff;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .pagina-contacto #navegacao-principal.is-open a {
+        padding: 14px 0;
+        border-top: 1px solid #f1f5f9;
+    }
+
+    .pagina-contacto .menu-toggle,
+    .pagina-contacto #botao-menu {
+        display: flex;
+    }
+}
+
+/* =========================================================
+   PALETA UNIFICADA — cursos.xhtml (:root) aplicada a
+   contactos, faq, servicos e sobre-nos
+   cream #EEE3D0 / sand #D6B997 / caramel #B77A50 /
+   terracotta #8E4F38 / brown #54382D / dark #151A22 /
+   navy #182533 / white #FFFAF2
+========================================================= */
+
+/* ---- contactos: mantém layout da imagem, recolore p/ paleta ---- */
+.pagina-contacto {
+    background-color: var(--dark);
+}
+.pagina-contacto .logo {
+    color: var(--dark);
+}
+.pagina-contacto #navegacao-principal a {
+    color: var(--text-soft);
+}
+.pagina-contacto #navegacao-principal a:hover,
+.pagina-contacto #navegacao-principal a[aria-current="page"] {
+    color: var(--dark);
+}
+.pagina-contacto .bg-dark {
+    background-color: var(--dark);
+}
+.pagina-contacto .contact-info h2 {
+    color: var(--white);
+}
+.pagina-contacto .contact-info p {
+    color: rgba(255, 250, 242, 0.8);
+}
+.pagina-contacto .contact-info strong {
+    color: var(--sand);
+}
+.pagina-contacto .contact-form {
+    background: var(--white);
+    border: 1px solid var(--sand);
+}
+.pagina-contacto .form-group label {
+    color: var(--brown);
+}
+.pagina-contacto .form-group input,
+.pagina-contacto .form-group textarea {
+    border-color: var(--sand);
+    background: rgba(255, 250, 242, 0.9);
+    color: var(--text);
+}
+.pagina-contacto .form-group input:focus,
+.pagina-contacto .form-group textarea:focus {
+    border-color: var(--caramel);
+    background: var(--white-pure);
+    box-shadow: 0 0 0 3px rgba(183, 122, 80, 0.15);
+}
+.pagina-contacto .btn {
+    background: var(--caramel);
+    color: var(--white-pure);
+    box-shadow: 0 10px 30px rgba(142, 79, 56, 0.25);
+}
+.pagina-contacto .btn:hover {
+    background: var(--terracotta);
+}
+.pagina-contacto .footer {
+    background: #10151b;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.pagina-contacto .footer p {
+    color: rgba(255, 255, 255, 0.45);
+}
+.pagina-contacto .footer-link {
+    color: rgba(255, 255, 255, 0.6);
+}
+.pagina-contacto .footer-title {
+    color: var(--sand);
+}
+
+/* ---- faq: fundo branco -> cream, footer castanho -> dark ---- */
+.pagina-faq {
+    background-color: var(--cream);
+}
+.pagina-faq .section,
+.pagina-faq .bg-dark,
+.pagina-faq .bg-light {
+    background-color: var(--cream);
+}
+.pagina-faq .card,
+.pagina-faq .faq-item,
+.pagina-faq .contact-form,
+.pagina-faq .stat-item {
+    background-color: var(--white);
+    border-color: var(--sand);
+}
+.pagina-faq .form-group input,
+.pagina-faq .form-group textarea {
+    border-color: var(--sand);
+}
+.pagina-faq .form-group input:focus,
+.pagina-faq .form-group textarea:focus {
+    border-color: var(--caramel);
+}
+.pagina-faq .btn {
+    background-color: var(--caramel);
+}
+.pagina-faq .footer {
+    background-color: #10151b;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ---- servicos: footer castanho -> dark global ---- */
+.pagina-servicos {
+    background-color: var(--cream);
+}
+.pagina-servicos .footer {
+    background-color: #10151b;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.pagina-servicos .footer-title {
+    color: var(--sand);
+}
+.pagina-servicos .btn {
+    background-color: var(--caramel);
+}
+
+/* ---- sobre-nos: rosa #D68997 -> sand, castanhos avulso -> vars ---- */
+.pagina-sobre {
+    background-color: var(--cream);
+}
+.pagina-sobre .sobre-titulo {
+    background-color: var(--navy);
+}
+.pagina-sobre .sobre-titulo p {
+    color: var(--sand);
+}
+.pagina-sobre .sobre-introducao {
+    border-left-color: var(--caramel);
+}
+.pagina-sobre .cartao-historia::before {
+    background-color: var(--sand);
+    border-color: var(--cream);
+    box-shadow: 0 0 0 2px var(--caramel);
+}
+.pagina-sobre .cartao-historia h3 {
+    color: var(--brown);
+}
+.pagina-sobre .titulo-secao::after,
+.pagina-sobre .linha-tempo::before,
+.pagina-sobre .missao h2::after,
+.pagina-sobre .visao h2::after {
+    background-color: var(--caramel);
+}
+.pagina-sobre .missao,
+.pagina-sobre .visao {
+    border-top-color: var(--caramel);
+    border-bottom-color: var(--caramel);
+}
+.pagina-sobre .valor {
+    border-left-color: var(--sand);
+}
+.pagina-sobre .valor h3 {
+    color: var(--brown);
+}
+.pagina-sobre .pilar {
+    border-left-color: var(--caramel);
+}
+.pagina-sobre .sobre-cursos {
+    background-color: var(--navy);
+}
+.pagina-sobre .sobre-cursos li::before {
+    color: var(--sand);
+}
+.pagina-sobre .sobre-numeros {
+    background-color: var(--brown);
+}
+.pagina-sobre .numero h3 {
+    color: var(--sand);
+}
+.pagina-sobre .sobre-diferencial {
+    border-top-color: var(--caramel);
+    border-bottom-color: var(--caramel);
+}
+
+/* =========================================================
+   RODAPÉ UNIFORME — todas as páginas
+   Paleta: #10151B / sand #D6B997 / caramel #B77A50
+========================================================= */
+.site-footer {
+    background: #10151b;
+    color: rgba(255, 255, 255, 0.65);
+    padding: 70px 0 25px;
+}
+.site-footer .container {
+    width: min(var(--container), 90%);
+    margin-inline: auto;
+}
+.site-footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
+    gap: 45px;
+    padding-bottom: 50px;
+}
+.site-footer-brand p {
+    margin-top: 18px;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 13px;
+    line-height: 1.7;
+    max-width: 300px;
+}
+.site-footer h4 {
+    margin-bottom: 16px;
+    color: var(--sand);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.site-footer-col a,
+.site-footer-col address a {
+    display: block;
+    margin-bottom: 9px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12.5px;
+    font-style: normal;
+    transition: color 0.35s ease;
+}
+.site-footer-col a:hover {
+    color: #ffffff;
+}
+.site-footer-col address {
+    font-style: normal;
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.6);
+}
+.site-footer-col address strong {
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 600;
+}
+.site-footer-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 16px;
+}
+.site-footer-social a {
+    margin-bottom: 0;
+}
+.site-footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 11px;
+}
+@media (max-width: 900px) {
+    .site-footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 550px) {
+    .site-footer-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    .site-footer {
+        padding: 55px 0 20px;
+    }
+}
+
+/* =========================================================
+   CABEÇALHO UNIFORME — todas as páginas
+   Neutraliza: .pagina-servicos/.pagina-faq .header castanho
+   sticky, .pagina-contacto .header branco + nav cinzenta +
+   menu mobile branco. Base = header global escuro sticky;
+   exceção = páginas COM hero mantêm overlay transparente.
+========================================================= */
+
+/* 1. Header base uniforme (sem hero): sólido escuro + sticky */
+.header {
+    position: sticky;
+    top: 0;
+    inset: auto;
+    z-index: 100;
+    color: var(--white);
+    background: var(--dark);
+    background-color: #151a22;
+    background-image: none;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.header .logo {
+    color: var(--white);
+}
+
+.header .logo-symbol {
+    color: var(--sand);
+}
+
+.header #navegacao-principal a,
+.header .main-nav a {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.header #navegacao-principal a::after,
+.header .main-nav a::after {
+    display: block;
+    background: var(--sand);
+}
+
+.header #navegacao-principal a:hover,
+.header #navegacao-principal a[aria-current="page"],
+.header .main-nav a:hover,
+.header .main-nav a[aria-current="page"] {
+    color: #ffffff;
+}
+
+.header .nav-button {
+    border: 1px solid rgba(255, 255, 255, 0.42);
+    color: var(--white);
+    background: transparent;
+}
+
+.header #botao-menu,
+.header .menu-toggle,
+.header .mobile-menu-button {
+    border-color: rgba(255, 255, 255, 0.3);
+    color: var(--white);
+    background: transparent;
+}
+
+/* 2. Exceção — páginas COM hero: overlay transparente absoluto */
+body:has(.hero) .header {
+    position: absolute;
+    inset: 0 0 auto;
+    top: auto;
+    background: linear-gradient(to bottom, rgba(10, 15, 20, 0.5), transparent);
+    background-color: transparent;
+    background-image: linear-gradient(to bottom, rgba(10, 15, 20, 0.5), transparent);
+    border-bottom: 0;
+}
+
+/* 3. Forçar páginas escopadas a herdar o uniforme */
+.pagina-servicos .header,
+.pagina-faq .header,
+.pagina-contacto .header,
+.pagina-sobre .header {
+    position: sticky;
+    top: 0;
+    inset: auto;
+    z-index: 100;
+    color: var(--white);
+    background: var(--dark);
+    background-color: #151a22;
+    background-image: none;
+    border-bottom: 1px solid var(--border-light);
+    padding: 0;
+}
+
+body:has(.hero) .pagina-servicos .header,
+body:has(.hero) .pagina-faq .header,
+body:has(.hero) .pagina-contacto .header,
+body:has(.hero) .pagina-sobre .header {
+    position: absolute;
+    inset: 0 0 auto;
+    top: auto;
+    background: linear-gradient(to bottom, rgba(10, 15, 20, 0.5), transparent);
+    background-color: transparent;
+    background-image: linear-gradient(to bottom, rgba(10, 15, 20, 0.5), transparent);
+    border-bottom: 0;
+}
+
+.pagina-servicos .header .nav,
+.pagina-faq .header .nav,
+.pagina-contacto .header .nav,
+.pagina-sobre .header .nav {
+    border-bottom: 1px solid var(--border-light);
+}
+
+body:has(.hero) .pagina-servicos .header .nav,
+body:has(.hero) .pagina-faq .header .nav,
+body:has(.hero) .pagina-contacto .header .nav,
+body:has(.hero) .pagina-sobre .header .nav {
+    border-bottom: 1px solid var(--border-light);
+}
+
+/* 4. Recolorir .pagina-contacto para o padrão claro + menu mobile escuro */
+.pagina-contacto .logo {
+    color: var(--white);
+}
+
+.pagina-contacto .logo-symbol {
+    color: var(--sand);
+}
+
+.pagina-contacto #navegacao-principal a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.pagina-contacto #navegacao-principal a::after {
+    display: block;
+    background: var(--sand);
+}
+
+.pagina-contacto #navegacao-principal a:hover,
+.pagina-contacto #navegacao-principal a[aria-current="page"] {
+    color: #ffffff;
+}
+
+.pagina-contacto .menu-toggle,
+.pagina-contacto #botao-menu {
+    border-color: rgba(255, 255, 255, 0.3);
+    color: var(--white);
+    background: transparent;
+}
+
+.pagina-contacto #navegacao-principal.is-open {
+    background: rgba(21, 26, 34, 0.98);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.pagina-contacto #navegacao-principal.is-open a {
+    color: rgba(255, 255, 255, 0.8);
+    border-top: 0;
+}
+
+/* 5. Responsivo mobile igual ao global (<850px) */
+@media (max-width: 850px) {
+    .pagina-servicos #botao-menu,
+    .pagina-faq #botao-menu,
+    .pagina-contacto #botao-menu,
+    .pagina-sobre #botao-menu,
+    .pagina-servicos .menu-toggle,
+    .pagina-faq .menu-toggle,
+    .pagina-contacto .menu-toggle,
+    .pagina-sobre .menu-toggle,
+    .pagina-servicos .mobile-menu-button,
+    .pagina-faq .mobile-menu-button,
+    .pagina-contacto .mobile-menu-button,
+    .pagina-sobre .mobile-menu-button {
+        display: flex;
+    }
+}
+
+/* =========================================================
+   SERVICOS — fundo creme igual à página cursos
+   (.courses em cursos.xhtml usa #e2d2bd sobre body cream)
+========================================================= */
+.pagina-servicos {
+    background-color: var(--cream);
+}
+.pagina-servicos .section.bg-light {
+    background-color: #e2d2bd;
+    color: var(--color-text-primary);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+.pagina-servicos .bg-light .section-title,
+.pagina-servicos .bg-light .main-feature-title,
+.pagina-servicos .bg-light .sidebar-title {
+    color: var(--color-text-primary);
+    border-bottom-color: var(--color-text-primary);
+}
+.pagina-servicos .bg-light .main-feature-text,
+.pagina-servicos .bg-light .sidebar-text,
+.pagina-servicos .bg-light .sidebar-meta,
+.pagina-servicos .bg-light p {
+    color: var(--color-text-secondary);
+}
+.pagina-servicos .bg-light strong {
+    color: var(--color-text-primary);
+}
+.pagina-servicos .sidebar-item {
+    border-bottom-color: rgba(84, 56, 45, 0.25);
 }
