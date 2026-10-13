@@ -1,0 +1,8 @@
+# robots.txt — Universidade Jupiter
+# https://www.universidadejupiter.edu/robots.txt
+
+User-agent: *
+Allow: /
+
+# Ficheiro de sitemap
+Sitemap: https://www.universidadejupiter.edu/sitemap.xml
